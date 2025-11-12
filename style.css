@@ -1,0 +1,131 @@
+body {
+    background: linear-gradient(to bottom, #a0d8f1, #fce3b1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.oso {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: #9c6b30;
+    border-radius: 50%;
+    animation: respiracion 4s infinite ease-in-out;
+}
+
+/* Orejas */
+.oreja {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #9c6b30;
+    border-radius: 50%;
+    top: -30px;
+}
+.oreja-izq { left: -20px; }
+.oreja-der { right: -20px; }
+
+/* Cara */
+.cara {
+    position: relative;
+    top: 45px;
+}
+
+/* Ojos */
+.ojo {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    animation: parpadeo 5s infinite;
+}
+.ojo-izq { left: 40px; }
+.ojo-der { right: 40px; }
+
+.ojo::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    top: 6px;
+    left: 7px;
+}
+
+/* Hocico */
+.hocico {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #c9975a;
+    width: 80px;
+    height: 60px;
+    border-radius: 50% / 40%;
+}
+
+.nariz {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+}
+
+.boca {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 40px;
+    height: 20px;
+    border-bottom: 4px solid #000;
+    border-radius: 0 0 40px 40px;
+    transform: translateX(-50%);
+}
+
+/* Botón */
+button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ffcf9c;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px #c9975a;
+    transition: all 0.2s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+@keyframes parpadeo {
+    0%, 95%, 100% { transform: scaleY(1); }
+    97% { transform: scaleY(0.1); }
+}
+
+@keyframes respiracion {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+@keyframes salto {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-60px); }
+    60% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
