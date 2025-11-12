@@ -3,24 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oso Tierno Animado 🧸</title>
+    <title>Oso Animado Interactivo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <div class="oso">
-            <div class="oreja oreja-izq"></div>
-            <div class="oreja oreja-der"></div>
-            <div class="cara">
-                <div class="ojo ojo-izq"></div>
-                <div class="ojo ojo-der"></div>
-                <div class="hocico">
-                    <div class="nariz"></div>
-                    <div class="boca"></div>
+        <h1>Mi Oso Animado</h1>
+        <p class="subtitle">¡Haz clic en el oso para ver la magia!</p>
+        
+        <div class="oso-container">
+            <!-- Flores que aparecerán al hacer clic -->
+            <div class="flores-container" id="floresContainer"></div>
+            
+            <!-- Oso -->
+            <div class="oso" id="oso">
+                <div class="oreja izquierda"></div>
+                <div class="oreja derecha"></div>
+                <div class="ojo izquierdo">
+                    <div class="pupila"></div>
                 </div>
+                <div class="ojo derecho">
+                    <div class="pupila"></div>
+                </div>
+                <div class="nariz"></div>
+                <div class="boca" id="boca"></div>
+                <div class="brazo izquierdo"></div>
+                <div class="brazo derecho"></div>
             </div>
         </div>
-        <button id="btnSaludo">🐾 ¡Hazme saltar!</button>
+        
+        <div class="mensaje" id="mensaje">¡Hola! Soy tu osito feliz ❤️</div>
+        
+        <div class="controles">
+            <button id="btnReset">Reiniciar</button>
+            <button id="btnModoNocturno">Modo Nocturno</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
