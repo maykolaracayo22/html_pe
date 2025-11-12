@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oso Animado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #a0d8f1;
+        }
+
+        .oso {
+            width: 150px;
+            height: 150px;
+            background: #8b4513;
+            border-radius: 50%;
+            position: relative;
+            animation: saltar 2s infinite ease-in-out;
+        }
+
+        /* Ojos */
+        .oso::before, .oso::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border-radius: 50%;
+            top: 30px;
+        }
+        .oso::before { left: 30px; }
+        .oso::after { right: 30px; }
+
+        /* Pupilas */
+        .pupila-left, .pupila-right {
+            width: 10px;
+            height: 10px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+        }
+        .pupila-left { left: 8px; }
+        .pupila-right { right: 8px; }
+
+        /* Animación */
+        @keyframes saltar {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="oso">
+        <div class="pupila-left"></div>
+        <div class="pupila-right"></div>
+    </div>
+</body>
+</html>
